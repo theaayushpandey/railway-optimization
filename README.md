@@ -1,3 +1,4 @@
+#Railway Optimization
 🚆 Railway Optimization System
 A web-based system designed to simulate and manage train bookings efficiently using optimized data handling and modular JavaScript. Built with HTML, CSS, and JavaScript, this project helps visualize how railway systems manage ticket reservations and train data in real-time.
 
