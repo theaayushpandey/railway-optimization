@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking System</title>
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/utility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-links d-flex">
+      <button class="btn btn-delete">
+        <i class="fa-solid fa-lock mr-2"></i>
+        <a href="index.html">Admin</a>
+      </button>
+      <button id="viewTicketsBtn" class="btn btn-primary">
+        <i class="fas fa-ticket-alt mr-2"></i> View My Tickets
+      </button>
+    </div>
+    <div class="booking-card">
+      <h2 class="flex-c"><i class="fas fa-train mr-2"></i> Train Ticket
+        Booking
+      </h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <div class="form-field d-flex">
+            <label for="from">From</label>
+            <div class="select-wrapper mr-3">
+              <select id="from" required>
+                <option value="DEL">New Delhi</option>
+              </select>
+            </div>
+            <div onclick="swap()" class="swap">
+              <img src="swap.svg" alt="">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="to">To</label>
+            <div class="select-wrapper">
+              <select id="to" required>
+                <option value="LKO">Lucknow</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="date">Travel Date</label>
+            <input type="date" id="date" required>
+          </div>
+
+          <div class="form-field">
+            <label for="class">Class</label>
+            <select id="class">
+              <option value="sleeper">Sleeper</option>
+              <option value="3ac">AC 3 Tier</option>
+              <option value="2ac">AC 2 Tier</option>
+              <option value="1ac">AC 1 Tier</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quota">Quota</label>
+            <select id="quota">
+              <option value="general">General</option>
+              <option value="tatkal">Tatkal</option>
+              <option value="ladies">Ladies</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sort-options-container">
+          <label>Sort By:</label>
+          <div class="sort-options d-flex">
+            <button type="button" class="sort-option btn btn-primary active" data-sort="fare">
+              <i class="fas fa-rupee-sign mr-2"></i> Fare Friendly
+            </button>
+            <button type="button" class="sort-option btn btn-secondary" data-sort="time">
+              <i class="fas fa-clock mr-2"></i> Time Friendly
+            </button>
+          </div>
+          <input type="hidden" id="sort" value="fare">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-search mr-2"></i> Search Trains
+        </button>
+      </form>
+    </div>
+
+    <div class="results" id="results">
+      <!-- Available trains will appear here -->
+    </div>
+  </div>
+
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close close-btn flex-c"><i class="fa-solid fa-xmark"></i></span>
+      <h2 class="flex-c">Complete Your Booking</h2>
+
+      <div class="train-summary">
+        <h3 class="d-flex align-items-center" id="modal-train-name"></h3>
+        <p class="d-flex align-items-center" id="modal-train-timings"></p>
+        <p class="d-flex align-items-center" id="modal-train-class"></p>
+        <p class="d-flex align-items-center" id="modal-train-fare"></p>
+      </div>
+
+      <form id="bookingForm-modal">
+        <div class="form-group d-flex">
+          <label for="passenger-name">Passenger Name</label>
+          <input placeholder="Enter Passenger Name..." type="text" id="passenger-name" required>
+        </div>
+
+        <div class="form-group d-flex passenger-detail">
+          <div class="flex-b">
+            <label class="mr-2" for="passenger-gender">Gender</label>
+            <select id="passenger-gender" required>
+              <div>
+                <i class="fa-solid fa-circle-chevron-down mr-2"></i>
+                <option value="">Select </option>
+              </div>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="flex-b">
+            <label class="mr-2" for="passenger-count">Number of Passengers</label>
+            <input type="number" id="passenger-count" min="1" max="10" value="1" required>
+          </div>
+          <div class="flex-b">
+            <label class="mr-2" for="passenger-age">Age</label>
+            <input type="number" id="passenger-age" min="1" max="100" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="fas fa-ticket-alt mr-2"></i> Confirm Booking
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!--  Status Modal -->
+  <div id="msg-modal" class="flex-c msg-modal">
+    <div class="flex-c">
+      <span class="close" onclick="closeMsgModal()"><i class="fa-solid fa-xmark"></i></span>
+      <p id="showMessage" class="mr-3"><i class="fa-solid fa-info-circle mr-3"></i> Loading data...</p>
+
+    </div>
+  </div>
+
+
+  <script src="script/booking.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</body>
+
+</html>

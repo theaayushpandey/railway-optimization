@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Railway Network Optimizer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/utility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<!-- <script>
+  fetch("http://127.0.0.1:5000/check_login", {
+    method: "GET",
+    credentials: "include"
+  }).then(res => res.json()).then(data => {
+    if (!data.logged_in) {
+      window.location.href = "./form/login.html"; // Redirect to login
+    }
+  }).catch(err => {
+    console.error("Session check failed", err);
+    window.location.href = "./form/login.html";
+  });
+</script> -->
+
+<body>
+
+  <div class="container">
+
+    <div class="control-panel">
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="admin">
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </button>
+        <button class="tab-btn" data-tab="network">
+          <i class="fas fa-project-diagram"></i> Network
+        </button>
+        <button class="tab-btn" data-tab="path">
+          <i class="fas fa-route"></i> Path
+        </button>
+        <button class="tab-btn" data-tab="flow">
+          <i class="fas fa-water"></i> Flow
+        </button>
+        <button class="tab-btn" data-tab="mst">
+          <i class="fas fa-tree"></i> MST
+        </button>
+        <button class="tab-btn" data-tab="train">
+          <i class="fas fa-train"></i> Trains
+        </button>
+      </div>
+
+
+      <div id="admin-tab" class="tab-content active">
+        <div class="card">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Dashboard Overview</h3>
+            <div class="text-muted">Last updated: <span id="last-updated-time">Just now</span></div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card metric-primary">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-train"></i>
+              </div>
+              <div class="metric-value" id="total-trains">0</div>
+              <div class="metric-label">Active Trains</div>
+            </div>
+            <div class="metric-card metric-success">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="metric-value" id="total-stations">0</div>
+              <div class="metric-label">Operational Stations</div>
+            </div>
+
+            <div class="metric-card metric-info">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-route"></i>
+              </div>
+              <div class="metric-value" id="total-tracks">0</div>
+              <div class="metric-label">Active Routes</div>
+            </div>
+            <div class="metric-card metric-warning">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-ticket-alt"></i>
+              </div>
+              <div class="metric-value" id="total-bookings">0</div>
+              <div class="metric-label">Total Bookings</div>
+            </div>
+            <div class="metric-card metric-danger">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <div class="metric-value" id="total-stations-close">0</div>
+              <div class="metric-label">Stations Closed</div>
+            </div>
+            <div class="metric-card metric-danger">
+              <div class="metric-icon flex-c">
+                <i class="fas fa-traffic-light"></i>
+              </div>
+              <div class="metric-value" id="total-track-close">0</div>
+              <div class="metric-label">Routes Disrupted</div>
+            </div>
+          </div>
+
+          <a href="booking.html" class="btn btn-primary btn-block">
+            <i class="fas fa-external-link-alt mr-2"></i> Go to Booking Page
+          </a>
+        </div>
+      </div>
+
+      <div id="network-tab" class="tab-content">
+        <div class="card mb-3">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Add New Station</h3>
+          </div>
+          <div class="card-body">
+            <form id="station-form">
+              <div class="form-group">
+                <label class="form-label">Station ID</label>
+                <input type="text" id="stationId" class="form-control" placeholder="ST001" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Station Name</label>
+                <input type="text" id="stationName" class="form-control" placeholder="Central Station" required>
+              </div>
+              <div class=" flex-c">
+                <div class="form-group mr-2">
+                  <label class="form-label">Latitude</label>
+                  <input type="number" id="stationLat" class="form-control" placeholder="12.9716" step="0.000001"
+                    required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Longitude</label>
+                  <input type="number" id="stationLng" class="form-control" placeholder="77.5946" step="0.000001"
+                    required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3">
+                <i class="fas fa-plus mr-2"></i> Add Station
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Add New Track</h3>
+          </div>
+          <div class="card-body">
+            <form id="track-form">
+              <div class="form-group">
+                <label class="form-label">Source Station</label>
+                <select id="track-source" class="form-control" required>
+                  <option value="">Select Source</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Destination Station</label>
+                <select id="track-destination" class="form-control" required>
+                  <option value="">Select Destination</option>
+                </select>
+              </div>
+              <div class="flex-c">
+                <div class="form-group mr-2">
+                  <label class="form-label">Distance (km)</label>
+                  <input type="number" id="track-distance" class="form-control" placeholder="100.1" step="0.1" min="0.1"
+                    required>
+                </div>
+                <div class="form-group mr-2">
+                  <label class="form-label">Weight (priority)</label>
+                  <input type="number" id="track-weight" class="form-control" placeholder="Same as distance if blank"
+                    step="0.1" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Capacity</label>
+                  <input type="number" id="track-capacity" class="form-control" placeholder="10" min="1" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label d-flex">
+                  <input type="checkbox" checked id="track-bidirectional"> Bidirectional Track
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3">
+                <i class="fas fa-plus mr-2"></i> Add Track
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Manage Temporary Closures</h3>
+          </div>
+          <div class="card-body">
+            <form id="closure-form">
+              <div class="form-group">
+                <label class="form-label">Closure Type</label>
+                <select id="closure-type" class="form-control" required>
+                  <option value="station">Station</option>
+                  <option value="track">Track</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="station-closure-fields">
+                <label class="form-label">Station</label>
+                <select id="closure-station" class="form-control">
+                  <option value="">Select Station</option>
+                </select>
+              </div>
+
+              <div class="form-group d-none" id="track-closure-fields">
+                <div class="form-group">
+                  <label class="form-label">Source Station</label>
+                  <select id="closure-track-source" class="form-control">
+                    <option value="">Select Source</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Destination Station</label>
+                  <select id="closure-track-destination" class="form-control">
+                    <option value="">Select Destination</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Reason</label>
+                <input type="text" id="closure-reason" class="form-control" placeholder="Maintenance, Accident, etc."
+                  required>
+              </div>
+              <!--                   
+                  <div class="form-group">
+                      <label class="form-label">Duration (hours)</label>
+                      <input type="number" id="closure-duration" class="form-control" min="1" value="4" required>
+                  </div> -->
+              <div class="form-group">
+                <label class="form-label">Duration</label>
+                <div class="d-flex">
+                  <input type="number" id="closure-hours" class="form-control mr-2" min="0" placeholder="Hours">
+                  <!-- <span class="duration-separator">:</span> -->
+                  <input type="number" id="closure-minutes" class="form-control" min="0" max="59" placeholder="Minutes">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-exclamation-triangle mr-2"></i> Add Closure
+              </button>
+            </form>
+
+            <div class="mt-3" id="active-closures">
+              <h4>Active Closures</h4>
+              <div class="closures-list" id="closures-list">
+                <!-- Closures will appear here -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div id="path-tab" class="tab-content">
+        <div class="card">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Find Path</h3>
+          </div>
+          <div class="card-body">
+            <form id="path-form">
+              <div class="form-group">
+                <label class="form-label">Start Station</label>
+                <select id="start-station" class="form-control" required>
+                  <option value="">Select Start Station</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">End Station</label>
+                <select id="end-station" class="form-control" required>
+                  <option value="">Select End Station</option>
+                </select>
+              </div>
+              <div class="form-group  mr-2">
+                <label class="form-label">Enter K to Search K Shortest Path</label>
+                <input type="number" id="k-value" class="form-control" value="1" min="0" max="1000" required>
+              </div>
+              <div class="d-flex gap-2">
+                <button type="submit" id="find-path-btn" class="btn btn-primary btn-block mr-2">
+                  <i class="fas fa-route mr-2"></i> Find Path (Dijkstra's)
+                </button>
+                <button type="submit" id="find-bellman-btn" class="btn btn-primary btn-block mr-2">
+                  <i class="fas fa-route mr-2"></i> Find Path (Bellman-Ford)
+                </button>
+                <button type=" submit" id="find-all-paths-btn" class="btn btn-primary btn-block">
+                  <i class="fas fa-list-ol mr-2"></i> All Paths (A*)
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div id="path-results" class="mt-3"></div>
+
+        <template id="all-paths-result-template">
+          <div class="mst-summary mb-3">
+            <span class="mst-total"><strong id="total-path">0</strong></span>
+          </div>
+        </template>
+
+        <template id="shortest-path-result-template">
+          <div class="result-card fade-in">
+            <div class="result-value" id="path-distance">N/A</div>
+            <div class="result-details" id="path-stations"></div>
+          </div>
+        </template>
+      </div>
+
+      <div id="flow-tab" class="tab-content">
+        <div class="card">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Maximum Flow</h3>
+          </div>
+          <div class="card-body">
+            <form id="flow-form">
+              <div class="form-group">
+                <label class="form-label">Source Station</label>
+                <select id="source-station" class="form-control" required>
+                  <option value="">Select Source</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sink Station</label>
+                <select id="sink-station" class="form-control" required>
+                  <option value="">Select Sink</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-calculator mr-2"></i> Calculate
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="path-results-mst" class="mt-3"></div>
+
+        <template id="max-flow-result-template">
+          <div class="result-card fade-in">
+            <h4>Maximum Flow Result</h4>
+            <div class="result-value" id="max-flow-value">0</div>
+            <div class="result-details">
+              <div>From: <strong id="flow-source">N/A</strong></div>
+              <div>To: <strong id="flow-sink">N/A</strong></div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div id="mst-tab" class="tab-content">
+        <div class="card">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Minimum Spanning Tree</h3>
+          </div>
+          <div class="card-body">
+            <button id="calculate-mst" class="btn btn-primary btn-block">
+              <i class="fas fa-calculator mr-2"></i> Calculate MST
+            </button>
+          </div>
+        </div>
+
+        <div id="mst-results" class="mt-3"></div>
+
+        <template id="mst-result-template">
+          <div class="result-card fade-in">
+            <div class="result-value" id="mst-distance">Minimum Spanning Tree</div>
+            <div class="mst-summary mb-3">
+              <span class="mst-total">Total Length: <strong class="total-value">0 km</strong></span>
+              <span class="mst-stations">Connecting: <strong class="station-count">0</strong> </span>
+            </div>
+            <div class="result-details" id="mst-edges-container"></div>
+          </div>
+        </template>
+      </div>
+
+      <div id="train-tab" class="tab-content">
+        <div class="card ">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Train Management</h3>
+            <button id="open-add-train-modal" class="btn btn-primary">
+              <i class="fas fa-plus mr-2"></i> Add New Train
+            </button>
+          </div>
+        </div>
+
+
+        <!-- Train Modal -->
+        <div id="train-modal" class="modal">
+          <div class="modal-content">
+
+            <form id="add-train-form">
+              <div class="flex-b mb-3">
+                <h3>Add New Train</h3>
+                <span class="close-modal flex-c" id="close-add-train-modal"><i class="fa-solid fa-xmark"></i></span>
+              </div>
+              <input class="form-control" type="text" id="train-id" placeholder="Train ID" required>
+              <input class="form-control" type="text" id="train-name" placeholder="Train Name" required>
+
+              <div style="display: flex; gap: 8px;">
+                <input type="number" id="train-speed" placeholder="Speed (km/h)" min="1" required>
+                <select class="form-control" id="train-type" required>
+                  <option value="">Select Train Type</option>
+                  <option value="Rajdhani Express">Rajdhani Express</option>
+                  <option value="Shatabdi Express">Shatabdi Express</option>
+                  <option value="Duronto Express">Duronto Express</option>
+                  <option value="Sampark Kranti Express">Sampark Kranti Express</option>
+                  <option value="Garib Rath Express">Garib Rath Express</option>
+                  <option value="Jan Shatabdi Express">Jan Shatabdi Express</option>
+                  <option value="Superfast Express">Superfast Express</option>
+                  <option value="Mail Express">Mail Express</option>
+                  <option value="Intercity Express">Intercity Express</option>
+                  <option value="Passenger Special">Passenger Special</option>
+                </select>
+              </div>
+
+              <div id="route-entries">
+                <div class="route-entry">
+                  <select class="station-select form-control" required>
+                    <option value="">Select Station</option>
+                    <!-- Stations will be populated by JS -->
+                  </select>
+                  <input class="form-control" type="time" class="station-time" required>
+                  <button type="button" class="remove-station flex-c"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+              </div>
+
+              <button type="button" id="add-station" class="btn btn-secondary btn-block">
+                <i class="fas fa-plus mr-2"></i> Add Station
+              </button>
+              <button type="submit" class="btn btn-primary btn-block mt-3">
+                <i class="fas fa-save mr-2"></i> Save Train
+              </button>
+
+
+            </form>
+          </div>
+        </div>
+
+
+        <div id="edit-train-modal" class="modal">
+          <div class="modal-content">
+            <div class="flex-b mb-3">
+              <h4>Edit Train</h4>
+              <span class="close-modal flex-c" onclick="closeEditTrainModal()">
+                <i class="fa-solid fa-xmark"></i>
+              </span>
+            </div>
+            <form id="edit-train-form">
+              <input type="hidden" id="edit-train-id">
+
+              <input type="text" id="edit-train-name" placeholder="Train Name" required>
+              <div style="display: flex; gap: 8px;">
+                <input type="number" id="edit-train-speed" placeholder="Speed (km/h)" min="1" required>
+                <select id="edit-train-type" required>
+                  <option value="Rajdhani Express">Rajdhani Express</option>
+                  <option value="Shatabdi Express">Shatabdi Express</option>
+                  <option value="Duronto Express">Duronto Express</option>
+                  <option value="Sampark Kranti Express">Sampark Kranti Express</option>
+                  <option value="Garib Rath Express">Garib Rath Express</option>
+                  <option value="Jan Shatabdi Express">Jan Shatabdi Express</option>
+                  <option value="Superfast Express">Superfast Express</option>
+                  <option value="Mail Express">Mail Express</option>
+                  <option value="Intercity Express">Intercity Express</option>
+                  <option value="Passenger Special">Passenger Special</option>
+                </select>
+              </div>
+
+              <div id="edit-route-entries">
+                <!-- Route entries will be added here dynamically -->
+              </div>
+
+              <button type="button" id="add-edit-station" class="btn btn-secondary btn-block">
+                <i class="fas fa-plus mr-2"></i> Add Station
+              </button>
+
+              <button type="submit" class="btn btn-primary btn-block mt-3">
+                <i class="fas fa-save mr-2"></i> Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+
+
+
+        <div class="trains-list">
+          <div class="card-header flex-b">
+            <h3 class="card-title">Existing Trains</h3>
+          </div>
+
+          <div class="card-body" style="padding: 0;">
+            <table class="table" id="trains-table">
+              <thead>
+                <tr>
+                  <th>Train ID</th>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Speed</th>
+                  <th colspan="2">Actions</th>
+                  <!-- <th>Actions</th> -->
+                </tr>
+              </thead>
+              <tbody id="trains-table-body">
+                <!-- Train data will appear here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="map"></div>
+  </div>
+
+
+  <!-- Status Modal -->
+
+  <div id="msg-modal" class="flex-c msg-modal">
+    <div class="flex-c">
+      <span class="close" onclick="closeMsgModal()"><i class="fa-solid fa-xmark"></i></span>
+      <p id="showMessage" class="mr-3"><i class="fa-solid fa-info-circle mr-3"></i> Loading data...</p>
+
+    </div>
+  </div>
+
+
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <!-- <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script> -->
+  <script src="script/script.js"></script>
+</body>
+
+</html>

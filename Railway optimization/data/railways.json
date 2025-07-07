@@ -1,0 +1,3077 @@
+{
+  "stations": [
+    {
+      "id": "DEL",
+      "name": "New Delhi",
+      "latitude": 28.6139,
+      "longitude": 77.209
+    },
+    {
+      "id": "JUC",
+      "name": "Jalandhar City",
+      "latitude": 31.326,
+      "longitude": 75.5762
+    },
+    {
+      "id": "LDH",
+      "name": "Ludhiana",
+      "latitude": 30.901,
+      "longitude": 75.8573
+    },
+    {
+      "id": "UMB",
+      "name": "Ambala Cantt",
+      "latitude": 30.3786,
+      "longitude": 76.7767
+    },
+    {
+      "id": "CDG",
+      "name": "Chandigarh",
+      "latitude": 30.7333,
+      "longitude": 76.7794
+    },
+    {
+      "id": "JAT",
+      "name": "Jammu Tawi",
+      "latitude": 32.6895,
+      "longitude": 74.6899
+    },
+    {
+      "id": "SRE",
+      "name": "Saharanpur",
+      "latitude": 29.9675,
+      "longitude": 77.5532
+    },
+    {
+      "id": "DEC",
+      "name": "Dehradun",
+      "latitude": 30.3165,
+      "longitude": 78.0322
+    },
+    {
+      "id": "LKO",
+      "name": "Lucknow",
+      "latitude": 26.8467,
+      "longitude": 80.9462
+    },
+    {
+      "id": "PNBE",
+      "name": "Patna",
+      "latitude": 25.5941,
+      "longitude": 85.1376
+    },
+    {
+      "id": "ALD",
+      "name": "Prayagraj",
+      "latitude": 25.4358,
+      "longitude": 81.8463
+    },
+    {
+      "id": "GZB",
+      "name": "Ghaziabad",
+      "latitude": 28.6692,
+      "longitude": 77.4538
+    },
+    {
+      "id": "MB",
+      "name": "Moradabad",
+      "latitude": 28.8386,
+      "longitude": 78.7768
+    },
+    {
+      "id": "BLY",
+      "name": "Bareilly",
+      "latitude": 28.367,
+      "longitude": 79.4304
+    },
+    {
+      "id": "BSB",
+      "name": "Varanasi",
+      "latitude": 25.3176,
+      "longitude": 82.9739
+    },
+    {
+      "id": "GKP",
+      "name": "Gorakhpur",
+      "latitude": 26.7606,
+      "longitude": 83.3732
+    },
+    {
+      "id": "KGM",
+      "name": "Kathgodam",
+      "latitude": 29.275,
+      "longitude": 79.527
+    },
+    {
+      "id": "HRY",
+      "name": "Haridwar",
+      "latitude": 29.9457,
+      "longitude": 78.163
+    },
+    {
+      "id": "INDB",
+      "name": "Indore Junction",
+      "latitude": 22.7196,
+      "longitude": 75.8577
+    },
+    {
+      "id": "BINA",
+      "name": "Bina Junction",
+      "latitude": 24.1834,
+      "longitude": 78.1876
+    },
+    {
+      "id": "JP",
+      "name": "Jaipur Junction",
+      "latitude": 26.9124,
+      "longitude": 75.7873
+    },
+    {
+      "id": "KOTA",
+      "name": "Kota Junction",
+      "latitude": 25.2138,
+      "longitude": 75.8648
+    },
+    {
+      "id": "RTM",
+      "name": "Rohtak Junction",
+      "latitude": 28.8955,
+      "longitude": 76.6066
+    },
+    {
+      "id": "KKDE",
+      "name": "Kurukshetra Junction",
+      "latitude": 29.9695,
+      "longitude": 76.8783
+    },
+    {
+      "id": "RMR",
+      "name": "Ramnagar",
+      "latitude": 29.3923,
+      "longitude": 79.1297
+    },
+    {
+      "id": "KPV",
+      "name": "Kashipur",
+      "latitude": 29.2136,
+      "longitude": 78.9612
+    },
+    {
+      "id": "AGC",
+      "name": "Agra Cantt",
+      "latitude": 27.1767,
+      "longitude": 78.0081
+    },
+    {
+      "id": "BPL",
+      "name": "Bhopal Junction",
+      "latitude": 23.2599,
+      "longitude": 77.4126
+    },
+    {
+      "id": "ADI",
+      "name": "Ahmedabad Junction",
+      "latitude": 23.0225,
+      "longitude": 72.5714
+    },
+    {
+      "id": "PUNE",
+      "name": "Pune Junction",
+      "latitude": 18.5204,
+      "longitude": 73.8567
+    },
+    {
+      "id": "NZM",
+      "name": "Hazrat Nizamuddin",
+      "latitude": 28.5916,
+      "longitude": 77.2507
+    },
+    {
+      "id": "VSKP",
+      "name": "Visakhapatnam Junction",
+      "latitude": 17.6868,
+      "longitude": 83.2185
+    },
+    {
+      "id": "NGP",
+      "name": "Nagpur Junction",
+      "latitude": 21.1458,
+      "longitude": 79.0882
+    },
+    {
+      "id": "LTT",
+      "name": "Lokmanya Tilak Terminus",
+      "latitude": 19.0817,
+      "longitude": 72.8945
+    },
+    {
+      "id": "KZJ",
+      "name": "Kazipet Junction",
+      "latitude": 17.9774,
+      "longitude": 79.5324
+    },
+    {
+      "id": "TVC",
+      "name": "Trivandrum Central",
+      "latitude": 8.4875,
+      "longitude": 76.948
+    },
+    {
+      "id": "UBL",
+      "name": "Hubli Junction",
+      "latitude": 15.3647,
+      "longitude": 75.124
+    },
+    {
+      "id": "GNT",
+      "name": "Guntur Junction",
+      "latitude": 16.3067,
+      "longitude": 80.4365
+    },
+    {
+      "id": "CBE",
+      "name": "Coimbatore Junction",
+      "latitude": 11.0168,
+      "longitude": 76.9558
+    },
+    {
+      "id": "JBP",
+      "name": "Jabalpur Junction",
+      "latitude": 23.1815,
+      "longitude": 79.9864
+    },
+    {
+      "id": "BZA",
+      "name": "Vijayawada Junction",
+      "latitude": 16.5062,
+      "longitude": 80.648
+    },
+    {
+      "id": "BHUJ",
+      "name": "Bhuj",
+      "latitude": 23.253,
+      "longitude": 69.663
+    },
+    {
+      "id": "RMM",
+      "name": "Rameswaram",
+      "latitude": 9.288,
+      "longitude": 79.3129
+    },
+    {
+      "id": "SA",
+      "name": "Salem Junction",
+      "latitude": 11.6643,
+      "longitude": 78.146
+    },
+    {
+      "id": "MAQ",
+      "name": "Mangalore Central",
+      "latitude": 12.8702,
+      "longitude": 74.8422
+    },
+    {
+      "id": "MYS",
+      "name": "Mysuru Junction",
+      "latitude": 12.2958,
+      "longitude": 76.6394
+    },
+    {
+      "id": "RU",
+      "name": "Renigunta Junction",
+      "latitude": 13.636,
+      "longitude": 79.5071
+    },
+    {
+      "id": "ED",
+      "name": "Erode Junction",
+      "latitude": 11.3424,
+      "longitude": 77.7274
+    },
+    {
+      "id": "BPQ",
+      "name": "Balharshah Junction",
+      "latitude": 19.8411,
+      "longitude": 79.3461
+    },
+    {
+      "id": "MDU",
+      "name": "Madurai Junction",
+      "latitude": 9.9252,
+      "longitude": 78.1198
+    },
+    {
+      "id": "PTA",
+      "name": "Patiala",
+      "latitude": 30.3398,
+      "longitude": 76.3869
+    },
+    {
+      "id": "BRC",
+      "name": "Vadodara Junction",
+      "latitude": 22.3072,
+      "longitude": 73.1812
+    },
+    {
+      "id": "ET",
+      "name": "Itarsi Junction",
+      "latitude": 22.6148,
+      "longitude": 77.762
+    },
+    {
+      "id": "TATA",
+      "name": "Tatanagar Junction",
+      "latitude": 22.8026,
+      "longitude": 86.2029
+    },
+    {
+      "id": "ASN",
+      "name": "Asansol Junction",
+      "latitude": 23.6849,
+      "longitude": 86.9515
+    },
+    {
+      "id": "JU",
+      "name": "Jodhpur Junction",
+      "latitude": 26.2389,
+      "longitude": 73.0243
+    },
+    {
+      "id": "PURI",
+      "name": "Puri",
+      "latitude": 19.8135,
+      "longitude": 85.8312
+    },
+    {
+      "id": "SBC",
+      "name": "KSR Bengaluru City Junction",
+      "latitude": 12.9763,
+      "longitude": 77.601
+    },
+    {
+      "id": "DHN",
+      "name": "Dhanbad Junction",
+      "latitude": 23.7957,
+      "longitude": 86.4304
+    },
+    {
+      "id": "RNC",
+      "name": "Ranchi Junction",
+      "latitude": 23.3434,
+      "longitude": 85.3096
+    },
+    {
+      "id": "KGP",
+      "name": "Kharagpur Junction",
+      "latitude": 22.346,
+      "longitude": 87.2311
+    },
+    {
+      "id": "BSP",
+      "name": "Bilaspur Junction",
+      "latitude": 22.0797,
+      "longitude": 82.1409
+    },
+    {
+      "id": "DURG",
+      "name": "Durg Junction",
+      "latitude": 21.1915,
+      "longitude": 81.2849
+    },
+    {
+      "id": "KUR",
+      "name": "Khurda Road Junction",
+      "latitude": 20.1703,
+      "longitude": 85.6666
+    },
+    {
+      "id": "ROU",
+      "name": "Rourkela Junction",
+      "latitude": 22.2604,
+      "longitude": 84.8536
+    },
+    {
+      "id": "BKN",
+      "name": "Bikaner Junction",
+      "latitude": 28.0229,
+      "longitude": 73.3119
+    },
+    {
+      "id": "HWH",
+      "name": "Howrah Junction",
+      "latitude": 22.5806,
+      "longitude": 88.3458
+    },
+    {
+      "id": "MAS",
+      "name": "Chennai Central",
+      "latitude": 13.0827,
+      "longitude": 80.2757
+    },
+    {
+      "id": "CSTM",
+      "name": "Chhatrapati Shivaji Maharaj Terminus",
+      "latitude": 18.9402,
+      "longitude": 72.8355
+    },
+    {
+      "id": "CNB",
+      "name": "Kanpur Central",
+      "latitude": 26.449923,
+      "longitude": 80.331871
+    },
+    {
+      "id": "ALJN",
+      "name": "Aligarh Junction",
+      "latitude": 27.8922,
+      "longitude": 78.0797
+    }
+  ],
+  "tracks": [
+    {
+      "source": "DEL",
+      "destination": "NZM",
+      "distance": 8.4,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 10
+    },
+    {
+      "source": "DEL",
+      "destination": "GZB",
+      "distance": 24.7,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 20
+    },
+    {
+      "source": "DEL",
+      "destination": "RTM",
+      "distance": 66.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 50
+    },
+    {
+      "source": "DEL",
+      "destination": "KKDE",
+      "distance": 154.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "DEL",
+      "destination": "SRE",
+      "distance": 154.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "DEL",
+      "destination": "MB",
+      "distance": 154.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "DEL",
+      "destination": "HRY",
+      "distance": 174.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "JUC",
+      "destination": "LDH",
+      "distance": 54.3,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 40
+    },
+    {
+      "source": "JUC",
+      "destination": "CDG",
+      "distance": 132.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "JUC",
+      "destination": "PTA",
+      "distance": 134.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "LDH",
+      "destination": "PTA",
+      "distance": 80.4,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 60
+    },
+    {
+      "source": "LDH",
+      "destination": "CDG",
+      "distance": 90.0,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 70
+    },
+    {
+      "source": "UMB",
+      "destination": "PTA",
+      "distance": 37.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 30
+    },
+    {
+      "source": "UMB",
+      "destination": "CDG",
+      "distance": 39.4,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 30
+    },
+    {
+      "source": "UMB",
+      "destination": "KKDE",
+      "distance": 46.5,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 35
+    },
+    {
+      "source": "CDG",
+      "destination": "PTA",
+      "distance": 57.7,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 45
+    },
+    {
+      "source": "JAT",
+      "destination": "JUC",
+      "distance": 173.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 130
+    },
+    {
+      "source": "JAT",
+      "destination": "LDH",
+      "distance": 227.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "JAT",
+      "destination": "CDG",
+      "distance": 293.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "SRE",
+      "destination": "HRY",
+      "distance": 58.8,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 45
+    },
+    {
+      "source": "SRE",
+      "destination": "DEC",
+      "distance": 60.2,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 45
+    },
+    {
+      "source": "SRE",
+      "destination": "KKDE",
+      "distance": 65.0,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 50
+    },
+    {
+      "source": "DEC",
+      "destination": "HRY",
+      "distance": 43.1,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 35
+    },
+    {
+      "source": "DEC",
+      "destination": "KKDE",
+      "distance": 117.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "LKO",
+      "destination": "ALD",
+      "distance": 180.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "LKO",
+      "destination": "BLY",
+      "distance": 225.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "PNBE",
+      "destination": "GKP",
+      "distance": 218.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "PNBE",
+      "destination": "BSB",
+      "distance": 219.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "PNBE",
+      "destination": "DHN",
+      "distance": 238.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "PNBE",
+      "destination": "RNC",
+      "distance": 250.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 190
+    },
+    {
+      "source": "PNBE",
+      "destination": "ASN",
+      "distance": 280.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "PNBE",
+      "destination": "TATA",
+      "distance": 328.7,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 250
+    },
+    {
+      "source": "ALD",
+      "destination": "BSB",
+      "distance": 114.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "GZB",
+      "destination": "NZM",
+      "distance": 21.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 15
+    },
+    {
+      "source": "GZB",
+      "destination": "RTM",
+      "distance": 86.3,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 65
+    },
+    {
+      "source": "MB",
+      "destination": "KPV",
+      "distance": 45.4,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 35
+    },
+    {
+      "source": "MB",
+      "destination": "RMR",
+      "distance": 70.5,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 55
+    },
+    {
+      "source": "MB",
+      "destination": "BLY",
+      "distance": 82.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 65
+    },
+    {
+      "source": "BLY",
+      "destination": "KGM",
+      "distance": 101.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "BLY",
+      "destination": "KPV",
+      "distance": 104.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "BSB",
+      "destination": "GKP",
+      "distance": 165.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 125
+    },
+    {
+      "source": "BSB",
+      "destination": "LKO",
+      "distance": 264.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 200
+    },
+    {
+      "source": "BSB",
+      "destination": "RNC",
+      "distance": 322.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 240
+    },
+    {
+      "source": "GKP",
+      "destination": "ALD",
+      "distance": 212.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "KGM",
+      "destination": "RMR",
+      "distance": 40.7,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 30
+    },
+    {
+      "source": "KGM",
+      "destination": "KPV",
+      "distance": 55.3,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 40
+    },
+    {
+      "source": "KGM",
+      "destination": "MB",
+      "distance": 87.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 65
+    },
+    {
+      "source": "HRY",
+      "destination": "RMR",
+      "distance": 111.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 85
+    },
+    {
+      "source": "INDB",
+      "destination": "BPL",
+      "distance": 170.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 130
+    },
+    {
+      "source": "INDB",
+      "destination": "ET",
+      "distance": 195.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "INDB",
+      "destination": "KOTA",
+      "distance": 277.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "BINA",
+      "destination": "BPL",
+      "distance": 129.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "BINA",
+      "destination": "ET",
+      "distance": 179.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 135
+    },
+    {
+      "source": "BINA",
+      "destination": "JBP",
+      "distance": 214.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "JP",
+      "destination": "KOTA",
+      "distance": 189.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "JP",
+      "destination": "AGC",
+      "distance": 221.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "JP",
+      "destination": "RTM",
+      "distance": 234.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "KOTA",
+      "destination": "BINA",
+      "distance": 261.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 200
+    },
+    {
+      "source": "RTM",
+      "destination": "NZM",
+      "distance": 71.3,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 55
+    },
+    {
+      "source": "KKDE",
+      "destination": "PTA",
+      "distance": 62.7,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 50
+    },
+    {
+      "source": "RMR",
+      "destination": "KPV",
+      "distance": 25.7,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 20
+    },
+    {
+      "source": "AGC",
+      "destination": "NZM",
+      "distance": 174.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 130
+    },
+    {
+      "source": "AGC",
+      "destination": "GZB",
+      "distance": 174.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 130
+    },
+    {
+      "source": "AGC",
+      "destination": "DEL",
+      "distance": 178.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 135
+    },
+    {
+      "source": "BPL",
+      "destination": "ET",
+      "distance": 80.2,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 60
+    },
+    {
+      "source": "BPL",
+      "destination": "JBP",
+      "distance": 263.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 200
+    },
+    {
+      "source": "BPL",
+      "destination": "KOTA",
+      "distance": 268.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 200
+    },
+    {
+      "source": "BPL",
+      "destination": "NGP",
+      "distance": 291.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "BPL",
+      "destination": "BPQ",
+      "distance": 429.5,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 320
+    },
+    {
+      "source": "ADI",
+      "destination": "BRC",
+      "distance": 101.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "ADI",
+      "destination": "BHUJ",
+      "distance": 298.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "ADI",
+      "destination": "INDB",
+      "distance": 338.4,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 250
+    },
+    {
+      "source": "ADI",
+      "destination": "JU",
+      "distance": 360.6,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 270
+    },
+    {
+      "source": "ADI",
+      "destination": "KOTA",
+      "distance": 413.6,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 310
+    },
+    {
+      "source": "ADI",
+      "destination": "LTT",
+      "distance": 439.5,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 330
+    },
+    {
+      "source": "ADI",
+      "destination": "CSTM",
+      "distance": 454.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 340
+    },
+    {
+      "source": "PUNE",
+      "destination": "CSTM",
+      "distance": 117.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "PUNE",
+      "destination": "LTT",
+      "distance": 119.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "PUNE",
+      "destination": "UBL",
+      "distance": 375.9,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 280
+    },
+    {
+      "source": "VSKP",
+      "destination": "BZA",
+      "distance": 303.1,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 230
+    },
+    {
+      "source": "VSKP",
+      "destination": "GNT",
+      "distance": 333.3,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 250
+    },
+    {
+      "source": "VSKP",
+      "destination": "PURI",
+      "distance": 362.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 270
+    },
+    {
+      "source": "NGP",
+      "destination": "BPQ",
+      "distance": 147.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "NGP",
+      "destination": "ET",
+      "distance": 213.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "NGP",
+      "destination": "DURG",
+      "distance": 227.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "NGP",
+      "destination": "JBP",
+      "distance": 244.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "NGP",
+      "destination": "BSP",
+      "distance": 332.2,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 250
+    },
+    {
+      "source": "NGP",
+      "destination": "BINA",
+      "distance": 350.2,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 260
+    },
+    {
+      "source": "LTT",
+      "destination": "CSTM",
+      "distance": 16.9,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 15
+    },
+    {
+      "source": "LTT",
+      "destination": "BRC",
+      "distance": 359.9,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 270
+    },
+    {
+      "source": "LTT",
+      "destination": "UBL",
+      "distance": 476.3,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 360
+    },
+    {
+      "source": "LTT",
+      "destination": "INDB",
+      "distance": 508.3,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 380
+    },
+    {
+      "source": "LTT",
+      "destination": "BHUJ",
+      "distance": 572.1,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 430
+    },
+    {
+      "source": "KZJ",
+      "destination": "BZA",
+      "distance": 202.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "KZJ",
+      "destination": "BPQ",
+      "distance": 208.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "KZJ",
+      "destination": "GNT",
+      "distance": 209.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "TVC",
+      "destination": "MDU",
+      "distance": 205.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "TVC",
+      "destination": "RMM",
+      "distance": 274.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "TVC",
+      "destination": "CBE",
+      "distance": 281.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "UBL",
+      "destination": "MAQ",
+      "distance": 279.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "UBL",
+      "destination": "SBC",
+      "distance": 376.6,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 280
+    },
+    {
+      "source": "GNT",
+      "destination": "BZA",
+      "distance": 31.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 25
+    },
+    {
+      "source": "GNT",
+      "destination": "RU",
+      "distance": 313.3,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 240
+    },
+    {
+      "source": "CBE",
+      "destination": "ED",
+      "distance": 91.6,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 70
+    },
+    {
+      "source": "CBE",
+      "destination": "MYS",
+      "distance": 146.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "CBE",
+      "destination": "SA",
+      "distance": 148.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "JBP",
+      "destination": "ET",
+      "distance": 236.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "BHUJ",
+      "destination": "BRC",
+      "distance": 375.7,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 280
+    },
+    {
+      "source": "BHUJ",
+      "destination": "JU",
+      "distance": 474.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 360
+    },
+    {
+      "source": "RMM",
+      "destination": "MDU",
+      "distance": 148.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "RMM",
+      "destination": "ED",
+      "distance": 286.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "SA",
+      "destination": "ED",
+      "distance": 58.0,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 45
+    },
+    {
+      "source": "SA",
+      "destination": "SBC",
+      "distance": 157.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "MAQ",
+      "destination": "MYS",
+      "distance": 205.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "MAQ",
+      "destination": "SBC",
+      "distance": 299.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "MYS",
+      "destination": "SBC",
+      "distance": 128.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "MYS",
+      "destination": "ED",
+      "distance": 158.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "RU",
+      "destination": "MAS",
+      "distance": 103.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "RU",
+      "destination": "SBC",
+      "distance": 218.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 160
+    },
+    {
+      "source": "RU",
+      "destination": "SA",
+      "distance": 264.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 200
+    },
+    {
+      "source": "BPQ",
+      "destination": "DURG",
+      "distance": 251.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 190
+    },
+    {
+      "source": "MDU",
+      "destination": "ED",
+      "distance": 163.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "MDU",
+      "destination": "CBE",
+      "distance": 175.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 130
+    },
+    {
+      "source": "BRC",
+      "destination": "INDB",
+      "distance": 278.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "TATA",
+      "destination": "RNC",
+      "distance": 109.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "TATA",
+      "destination": "DHN",
+      "distance": 112.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 85
+    },
+    {
+      "source": "TATA",
+      "destination": "KGP",
+      "distance": 117.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "ASN",
+      "destination": "DHN",
+      "distance": 54.5,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 40
+    },
+    {
+      "source": "ASN",
+      "destination": "TATA",
+      "distance": 124.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 95
+    },
+    {
+      "source": "ASN",
+      "destination": "KGP",
+      "distance": 151.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "JU",
+      "destination": "BKN",
+      "distance": 200.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "JU",
+      "destination": "JP",
+      "distance": 284.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "PURI",
+      "destination": "KUR",
+      "distance": 43.2,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 35
+    },
+    {
+      "source": "PURI",
+      "destination": "ROU",
+      "distance": 290.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "PURI",
+      "destination": "KGP",
+      "distance": 316.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 240
+    },
+    {
+      "source": "SBC",
+      "destination": "ED",
+      "distance": 182.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "SBC",
+      "destination": "CBE",
+      "distance": 228.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "SBC",
+      "destination": "MAS",
+      "distance": 290.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "DHN",
+      "destination": "RNC",
+      "distance": 124.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 95
+    },
+    {
+      "source": "RNC",
+      "destination": "ROU",
+      "distance": 129.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "KGP",
+      "destination": "HWH",
+      "distance": 117.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "BSP",
+      "destination": "DURG",
+      "distance": 132.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "BSP",
+      "destination": "JBP",
+      "distance": 252.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 190
+    },
+    {
+      "source": "BSP",
+      "destination": "ROU",
+      "distance": 280.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "KUR",
+      "destination": "ROU",
+      "distance": 247.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 190
+    },
+    {
+      "source": "KUR",
+      "destination": "KGP",
+      "distance": 291.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 220
+    },
+    {
+      "source": "ROU",
+      "destination": "TATA",
+      "distance": 151.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "ROU",
+      "destination": "DHN",
+      "distance": 234.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "BKN",
+      "destination": "JP",
+      "distance": 273.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "HWH",
+      "destination": "ASN",
+      "distance": 188.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "HWH",
+      "destination": "TATA",
+      "distance": 221.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 170
+    },
+    {
+      "source": "HWH",
+      "destination": "DHN",
+      "distance": 237.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "HWH",
+      "destination": "RNC",
+      "distance": 322.2,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 240
+    },
+    {
+      "source": "HWH",
+      "destination": "ROU",
+      "distance": 360.7,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 270
+    },
+    {
+      "source": "HWH",
+      "destination": "KUR",
+      "distance": 385.7,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 290
+    },
+    {
+      "source": "MAS",
+      "destination": "SA",
+      "distance": 280.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 210
+    },
+    {
+      "source": "MAS",
+      "destination": "ED",
+      "distance": 337.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 250
+    },
+    {
+      "source": "MAS",
+      "destination": "GNT",
+      "distance": 358.9,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 270
+    },
+    {
+      "source": "MAS",
+      "destination": "BZA",
+      "distance": 382.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 290
+    },
+    {
+      "source": "MAS",
+      "destination": "MYS",
+      "distance": 404.0,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 300
+    },
+    {
+      "source": "CSTM",
+      "destination": "BRC",
+      "distance": 376.1,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 280
+    },
+    {
+      "source": "CSTM",
+      "destination": "UBL",
+      "distance": 466.0,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 350
+    },
+    {
+      "source": "CSTM",
+      "destination": "INDB",
+      "distance": 524.6,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 390
+    },
+    {
+      "source": "CSTM",
+      "destination": "BHUJ",
+      "distance": 581.6,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 440
+    },
+    {
+      "source": "DEL",
+      "destination": "KPV",
+      "distance": 183.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "DEL",
+      "destination": "UMB",
+      "distance": 200.6,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "JUC",
+      "destination": "UMB",
+      "distance": 155.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "LDH",
+      "destination": "UMB",
+      "distance": 105.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 80
+    },
+    {
+      "source": "UMB",
+      "destination": "SRE",
+      "distance": 87.5,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 65
+    },
+    {
+      "source": "CDG",
+      "destination": "KKDE",
+      "distance": 85.5,
+      "bidirectional": true,
+      "capacity": 25,
+      "weight": 65
+    },
+    {
+      "source": "CDG",
+      "destination": "SRE",
+      "distance": 113.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 85
+    },
+    {
+      "source": "DEC",
+      "destination": "UMB",
+      "distance": 120.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "LKO",
+      "destination": "GKP",
+      "distance": 241.1,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 180
+    },
+    {
+      "source": "LKO",
+      "destination": "KGM",
+      "distance": 303.8,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 230
+    },
+    {
+      "source": "ALD",
+      "destination": "BLY",
+      "distance": 404.5,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 300
+    },
+    {
+      "source": "ALD",
+      "destination": "KGM",
+      "distance": 484.4,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 360
+    },
+    {
+      "source": "GZB",
+      "destination": "MB",
+      "distance": 130.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "GZB",
+      "destination": "SRE",
+      "distance": 144.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "MB",
+      "destination": "HRY",
+      "distance": 136.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 100
+    },
+    {
+      "source": "BLY",
+      "destination": "RMR",
+      "distance": 117.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "BLY",
+      "destination": "GZB",
+      "distance": 196.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "BSB",
+      "destination": "BLY",
+      "distance": 488.4,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 370
+    },
+    {
+      "source": "BSB",
+      "destination": "KGM",
+      "distance": 556.4,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 420
+    },
+    {
+      "source": "GKP",
+      "destination": "BLY",
+      "distance": 427.7,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 320
+    },
+    {
+      "source": "KGM",
+      "destination": "HRY",
+      "distance": 151.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "KGM",
+      "destination": "DEC",
+      "distance": 185.0,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 140
+    },
+    {
+      "source": "HRY",
+      "destination": "KPV",
+      "distance": 112.2,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 85
+    },
+    {
+      "source": "HRY",
+      "destination": "KKDE",
+      "distance": 123.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 95
+    },
+    {
+      "source": "RTM",
+      "destination": "KKDE",
+      "distance": 122.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 95
+    },
+    {
+      "source": "RTM",
+      "destination": "SRE",
+      "distance": 150.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "RMR",
+      "destination": "DEC",
+      "distance": 147.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 110
+    },
+    {
+      "source": "KPV",
+      "destination": "DEC",
+      "distance": 151.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "NZM",
+      "destination": "MB",
+      "distance": 151.3,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 115
+    },
+    {
+      "source": "NZM",
+      "destination": "SRE",
+      "distance": 155.8,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "PTA",
+      "destination": "SRE",
+      "distance": 119.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "PTA",
+      "destination": "DEC",
+      "distance": 157.9,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 120
+    },
+    {
+      "source": "LKO",
+      "destination": "DEL",
+      "distance": 380.1,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 290
+    },
+    {
+      "source": "AGC",
+      "destination": "LKO",
+      "distance": 326.7,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 250
+    },
+    {
+      "source": "HWH",
+      "destination": "KGP",
+      "distance": 117.5,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 90
+    },
+    {
+      "source": "BKN",
+      "destination": "JU",
+      "distance": 200.4,
+      "bidirectional": true,
+      "capacity": 20,
+      "weight": 150
+    },
+    {
+      "source": "ALD",
+      "destination": "JBP",
+      "distance": 525.0,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 390
+    },
+    {
+      "source": "LKO",
+      "destination": "CNB",
+      "distance": 79.3,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 60
+    },
+    {
+      "source": "CNB",
+      "destination": "ALJN",
+      "distance": 285.0,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 220
+    },
+    {
+      "source": "ALJN",
+      "destination": "DEL",
+      "distance": 134.5,
+      "bidirectional": true,
+      "capacity": 15,
+      "weight": 100
+    }
+  ],
+  "trains": [
+    {
+      "id": "12310",
+      "name": "HWH - CSTM Super Express",
+      "speed": 82,
+      "route": [
+        "HWH",
+        "KGP",
+        "TATA",
+        "ASN",
+        "DHN",
+        "PNBE",
+        "BSB",
+        "GKP",
+        "LKO",
+        "DEL",
+        "NZM",
+        "RTM",
+        "JP",
+        "BKN",
+        "JU",
+        "ADI",
+        "BRC",
+        "BPL",
+        "ET",
+        "NGP",
+        "BPQ",
+        "KZJ",
+        "BZA",
+        "MAS",
+        "RU",
+        "SBC",
+        "UBL",
+        "PUNE",
+        "LTT",
+        "CSTM"
+      ],
+      "timings": [
+        "08:00",
+        "10:15",
+        "12:30",
+        "14:45",
+        "17:00",
+        "20:30",
+        "23:45",
+        "03:00",
+        "07:15",
+        "10:30",
+        "12:45",
+        "15:30",
+        "18:45",
+        "22:00",
+        "01:15",
+        "04:30",
+        "08:45",
+        "12:00",
+        "16:15",
+        "20:30",
+        "23:45",
+        "03:00",
+        "06:15",
+        "09:30",
+        "13:45",
+        "17:00",
+        "20:15",
+        "23:30"
+      ],
+      "type": "Superfast Express"
+    },
+    {
+      "id": "12520",
+      "name": "JAT - TVC Mail Express",
+      "speed": 65,
+      "route": [
+        "JAT",
+        "JUC",
+        "LDH",
+        "PTA",
+        "CDG",
+        "UMB",
+        "KKDE",
+        "SRE",
+        "DEC",
+        "HRY",
+        "KGM",
+        "BLY",
+        "GZB",
+        "DEL",
+        "NZM",
+        "AGC",
+        "BPL",
+        "ET",
+        "NGP",
+        "BPQ",
+        "KZJ",
+        "BZA",
+        "GNT",
+        "MAS",
+        "SA",
+        "ED",
+        "CBE",
+        "TVC"
+      ],
+      "timings": [
+        "06:00",
+        "08:15",
+        "10:30",
+        "13:00",
+        "15:15",
+        "17:30",
+        "19:45",
+        "22:00",
+        "00:15",
+        "03:30",
+        "06:45",
+        "09:00",
+        "12:15",
+        "14:30",
+        "16:45",
+        "19:00",
+        "22:15",
+        "01:30",
+        "04:45",
+        "08:00",
+        "11:15",
+        "14:30",
+        "17:45",
+        "21:00",
+        "23:15",
+        "02:30",
+        "05:45",
+        "08:00"
+      ],
+      "type": "Mail Express"
+    },
+    {
+      "id": "12904",
+      "name": "DEL - MAS Rajdhani Express",
+      "speed": 91,
+      "route": [
+        "DEL",
+        "NZM",
+        "AGC",
+        "BPL",
+        "ET",
+        "NGP",
+        "BPQ",
+        "KZJ",
+        "BZA",
+        "GNT",
+        "MAS",
+        "RU",
+        "SBC",
+        "UBL",
+        "PUNE",
+        "LTT",
+        "CSTM",
+        "ADI",
+        "BRC",
+        "BPL",
+        "NZM",
+        "DEL"
+      ],
+      "timings": [
+        "16:00",
+        "16:30",
+        "19:45",
+        "23:30",
+        "03:15",
+        "08:30",
+        "13:00",
+        "17:15",
+        "21:30",
+        "01:45",
+        "06:00",
+        "10:15",
+        "14:30",
+        "18:45",
+        "22:00",
+        "01:15",
+        "04:30",
+        "08:45",
+        "12:00",
+        "16:15",
+        "20:30"
+      ],
+      "type": "Rajdhani Express"
+    },
+    {
+      "id": "12648",
+      "name": "PURI - MAQ Sampark Kranti Express",
+      "speed": 80,
+      "route": [
+        "PURI",
+        "KUR",
+        "ROU",
+        "BSP",
+        "DURG",
+        "NGP",
+        "BPQ",
+        "KZJ",
+        "BZA",
+        "GNT",
+        "MAS",
+        "RU",
+        "SBC",
+        "UBL",
+        "MAQ"
+      ],
+      "timings": [
+        "07:00",
+        "09:15",
+        "12:30",
+        "16:45",
+        "20:00",
+        "23:15",
+        "02:30",
+        "06:45",
+        "10:00",
+        "13:15",
+        "16:30",
+        "20:45",
+        "23:00",
+        "02:15"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "22444",
+      "name": "BKN - TVC Garib Rath Express",
+      "speed": 75,
+      "route": [
+        "BKN",
+        "JU",
+        "ADI",
+        "BRC",
+        "BPL",
+        "ET",
+        "JBP",
+        "BSP",
+        "ROU",
+        "TATA",
+        "KGP",
+        "HWH",
+        "PNBE",
+        "BSB",
+        "ALD",
+        "LKO",
+        "DEL",
+        "NZM",
+        "AGC",
+        "KOTA",
+        "JP",
+        "BKN"
+      ],
+      "timings": [
+        "18:00",
+        "21:15",
+        "01:30",
+        "05:45",
+        "10:00",
+        "14:15",
+        "18:30",
+        "22:45",
+        "03:00",
+        "07:15",
+        "11:30",
+        "15:45",
+        "20:00",
+        "23:15",
+        "02:30",
+        "06:45",
+        "10:00",
+        "14:15",
+        "17:30",
+        "20:45",
+        "23:00"
+      ],
+      "type": "Garib Rath Express"
+    },
+    {
+      "id": "12310_2",
+      "name": "CSTM - HWH Super Express",
+      "speed": 82,
+      "route": [
+        "CSTM",
+        "LTT",
+        "PUNE",
+        "UBL",
+        "SBC",
+        "RU",
+        "MAS",
+        "BZA",
+        "KZJ",
+        "BPQ",
+        "NGP",
+        "ET",
+        "BPL",
+        "BRC",
+        "ADI",
+        "JU",
+        "BKN",
+        "JP",
+        "RTM",
+        "NZM",
+        "DEL",
+        "LKO",
+        "GKP",
+        "BSB",
+        "PNBE",
+        "DHN",
+        "ASN",
+        "TATA",
+        "KGP",
+        "HWH"
+      ],
+      "timings": [
+        "07:00",
+        "09:15",
+        "12:30",
+        "16:45",
+        "20:00",
+        "23:15",
+        "02:30",
+        "05:45",
+        "09:00",
+        "12:15",
+        "15:30",
+        "18:45",
+        "22:00",
+        "01:15",
+        "04:30",
+        "07:45",
+        "11:00",
+        "14:15",
+        "17:30",
+        "20:45",
+        "23:00",
+        "02:15",
+        "05:30",
+        "08:45",
+        "12:00",
+        "15:15",
+        "18:30",
+        "21:45"
+      ],
+      "type": "Superfast Express"
+    },
+    {
+      "id": "12520_2",
+      "name": "TVC - JAT Mail Express",
+      "speed": 65,
+      "route": [
+        "TVC",
+        "CBE",
+        "ED",
+        "SA",
+        "MAS",
+        "GNT",
+        "BZA",
+        "KZJ",
+        "BPQ",
+        "NGP",
+        "ET",
+        "BPL",
+        "AGC",
+        "NZM",
+        "DEL",
+        "GZB",
+        "BLY",
+        "KGM",
+        "HRY",
+        "DEC",
+        "SRE",
+        "KKDE",
+        "UMB",
+        "CDG",
+        "PTA",
+        "LDH",
+        "JUC",
+        "JAT"
+      ],
+      "timings": [
+        "09:00",
+        "11:15",
+        "14:30",
+        "17:45",
+        "21:00",
+        "00:15",
+        "03:30",
+        "06:45",
+        "10:00",
+        "13:15",
+        "16:30",
+        "19:45",
+        "23:00",
+        "02:15",
+        "05:30",
+        "08:45",
+        "12:00",
+        "15:15",
+        "18:30",
+        "21:45",
+        "01:00",
+        "04:15",
+        "07:30",
+        "10:45",
+        "14:00",
+        "17:15",
+        "20:30",
+        "23:45"
+      ],
+      "type": "Mail Express"
+    },
+    {
+      "id": "12904_2",
+      "name": "MAS - DEL Rajdhani Express",
+      "speed": 91,
+      "route": [
+        "MAS",
+        "GNT",
+        "BZA",
+        "KZJ",
+        "BPQ",
+        "NGP",
+        "ET",
+        "BPL",
+        "AGC",
+        "NZM",
+        "DEL",
+        "BRC",
+        "ADI",
+        "CSTM",
+        "LTT",
+        "PUNE",
+        "UBL",
+        "SBC",
+        "RU",
+        "MAS"
+      ],
+      "timings": [
+        "14:00",
+        "17:15",
+        "21:30",
+        "01:45",
+        "06:00",
+        "10:15",
+        "14:30",
+        "18:45",
+        "22:00",
+        "01:15",
+        "04:30",
+        "08:45",
+        "12:00",
+        "16:15",
+        "20:30",
+        "23:45",
+        "03:00",
+        "06:15",
+        "09:30",
+        "12:45",
+        "16:00"
+      ],
+      "type": "Rajdhani Express"
+    },
+    {
+      "id": "12648_2",
+      "name": "MAQ - PURI Sampark Kranti Express",
+      "speed": 80,
+      "route": [
+        "MAQ",
+        "UBL",
+        "SBC",
+        "RU",
+        "MAS",
+        "GNT",
+        "BZA",
+        "KZJ",
+        "BPQ",
+        "NGP",
+        "DURG",
+        "BSP",
+        "ROU",
+        "KUR",
+        "PURI"
+      ],
+      "timings": [
+        "08:00",
+        "11:15",
+        "15:30",
+        "19:45",
+        "23:00",
+        "02:15",
+        "06:30",
+        "10:45",
+        "14:00",
+        "17:15",
+        "20:30",
+        "23:45",
+        "03:00",
+        "06:15"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "22444_2",
+      "name": "TVC - BKN Garib Rath Express",
+      "speed": 75,
+      "route": [
+        "TVC",
+        "CBE",
+        "ED",
+        "SA",
+        "MAS",
+        "BZA",
+        "KZJ",
+        "BPQ",
+        "NGP",
+        "ET",
+        "BPL",
+        "BRC",
+        "ADI",
+        "JU",
+        "BKN",
+        "JP",
+        "KOTA",
+        "AGC",
+        "NZM",
+        "DEL",
+        "LKO",
+        "ALD",
+        "BSB",
+        "PNBE",
+        "HWH",
+        "KGP",
+        "TATA",
+        "ROU",
+        "BSP",
+        "JBP",
+        "ET",
+        "BPL",
+        "BRC",
+        "ADI",
+        "JU",
+        "BKN"
+      ],
+      "timings": [
+        "20:00",
+        "23:15",
+        "02:30",
+        "05:45",
+        "09:00",
+        "12:15",
+        "15:30",
+        "18:45",
+        "22:00",
+        "01:15",
+        "04:30",
+        "07:45",
+        "11:00",
+        "14:15",
+        "17:30",
+        "20:45",
+        "23:00",
+        "02:15",
+        "05:30",
+        "08:45",
+        "12:00",
+        "15:15",
+        "18:30",
+        "21:45",
+        "01:00",
+        "04:15",
+        "07:30",
+        "10:45",
+        "14:00",
+        "17:15",
+        "20:30",
+        "23:45",
+        "03:00",
+        "06:15",
+        "09:30"
+      ],
+      "type": "Garib Rath Express"
+    },
+    {
+      "id": "12365",
+      "name": "PNBE - JUC Ganga Sutlej Express",
+      "speed": 70,
+      "route": [
+        "PNBE",
+        "BSB",
+        "ALD",
+        "LKO",
+        "DEL",
+        "NZM",
+        "RTM",
+        "KKDE",
+        "UMB",
+        "CDG",
+        "LDH",
+        "JUC"
+      ],
+      "timings": [
+        "18:30",
+        "21:45",
+        "00:30",
+        "04:15",
+        "08:30",
+        "10:45",
+        "13:00",
+        "15:15",
+        "17:30",
+        "20:45",
+        "23:00",
+        "02:15"
+      ],
+      "type": "Superfast Express"
+    },
+    {
+      "id": "12038",
+      "name": "NZM - DEC Himalayan Kranti",
+      "speed": 75,
+      "route": [
+        "NZM",
+        "DEL",
+        "GZB",
+        "MB",
+        "BLY",
+        "KGM",
+        "HRY",
+        "DEC"
+      ],
+      "timings": [
+        "06:15",
+        "06:30",
+        "07:45",
+        "10:30",
+        "13:15",
+        "16:00",
+        "18:45",
+        "21:30"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "12372",
+      "name": "FZR - LKO Punjab Mail",
+      "speed": 68,
+      "route": [
+        "JUC",
+        "LDH",
+        "PTA",
+        "CDG",
+        "UMB",
+        "KKDE",
+        "SRE",
+        "MB",
+        "GZB",
+        "DEL",
+        "NZM",
+        "AGC",
+        "LKO"
+      ],
+      "timings": [
+        "07:00",
+        "09:15",
+        "11:30",
+        "13:45",
+        "15:30",
+        "17:45",
+        "20:00",
+        "22:15",
+        "00:30",
+        "03:45",
+        "06:00",
+        "08:15",
+        "10:30"
+      ],
+      "type": "Mail Express"
+    },
+    {
+      "id": "12450",
+      "name": "PNBE - NZM Sampark Kranti",
+      "speed": 80,
+      "route": [
+        "PNBE",
+        "GKP",
+        "LKO",
+        "AGC",
+        "DEL",
+        "NZM"
+      ],
+      "timings": [
+        "16:00",
+        "19:30",
+        "22:45",
+        "02:00",
+        "05:15",
+        "08:30"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "14012",
+      "name": "UMB - DEC Haryana Courier",
+      "speed": 60,
+      "route": [
+        "UMB",
+        "KKDE",
+        "SRE",
+        "DEC",
+        "HRY",
+        "KGM"
+      ],
+      "timings": [
+        "05:30",
+        "07:15",
+        "09:00",
+        "11:30",
+        "14:00",
+        "16:30"
+      ],
+      "type": "Intercity Express"
+    },
+    {
+      "id": "12068",
+      "name": "CDG - DEC Shivalik Express",
+      "speed": 65,
+      "route": [
+        "CDG",
+        "PTA",
+        "LDH",
+        "JUC",
+        "UMB",
+        "KKDE",
+        "SRE",
+        "DEC"
+      ],
+      "timings": [
+        "06:00",
+        "08:15",
+        "10:30",
+        "12:45",
+        "15:00",
+        "17:15",
+        "19:30",
+        "21:45"
+      ],
+      "type": "Jan Shatabdi Express"
+    },
+    {
+      "id": "11058",
+      "name": "LKO - JUC Kisan Express",
+      "speed": 55,
+      "route": [
+        "LKO",
+        "BSB",
+        "ALD",
+        "PNBE",
+        "GKP",
+        "LKO",
+        "DEL",
+        "RTM",
+        "KKDE",
+        "UMB",
+        "LDH",
+        "JUC"
+      ],
+      "timings": [
+        "04:30",
+        "07:45",
+        "11:00",
+        "14:15",
+        "17:30",
+        "21:45",
+        "01:00",
+        "04:15",
+        "07:30",
+        "10:45",
+        "14:00",
+        "17:15"
+      ],
+      "type": "Passenger Special"
+    },
+    {
+      "id": "12365_2",
+      "name": "JUC - PNBE Ganga Sutlej Express",
+      "speed": 70,
+      "route": [
+        "JUC",
+        "LDH",
+        "CDG",
+        "UMB",
+        "KKDE",
+        "RTM",
+        "NZM",
+        "DEL",
+        "LKO",
+        "ALD",
+        "BSB",
+        "PNBE"
+      ],
+      "timings": [
+        "20:00",
+        "22:15",
+        "01:30",
+        "04:45",
+        "07:00",
+        "10:15",
+        "12:30",
+        "15:45",
+        "18:00",
+        "21:15",
+        "00:30",
+        "04:00"
+      ],
+      "type": "Superfast Express"
+    },
+    {
+      "id": "12038_2",
+      "name": "DEC - NZM Himalayan Kranti",
+      "speed": 75,
+      "route": [
+        "DEC",
+        "HRY",
+        "KGM",
+        "BLY",
+        "MB",
+        "GZB",
+        "DEL",
+        "NZM"
+      ],
+      "timings": [
+        "05:00",
+        "08:15",
+        "11:30",
+        "14:45",
+        "17:00",
+        "20:15",
+        "22:30",
+        "01:45"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "12372_2",
+      "name": "LKO - JUC Punjab Mail",
+      "speed": 68,
+      "route": [
+        "LKO",
+        "AGC",
+        "NZM",
+        "DEL",
+        "GZB",
+        "MB",
+        "SRE",
+        "KKDE",
+        "UMB",
+        "CDG",
+        "PTA",
+        "LDH",
+        "JUC"
+      ],
+      "timings": [
+        "15:00",
+        "18:15",
+        "20:30",
+        "23:45",
+        "02:00",
+        "05:15",
+        "07:30",
+        "10:45",
+        "13:00",
+        "16:15",
+        "18:30",
+        "21:45",
+        "00:00"
+      ],
+      "type": "Mail Express"
+    },
+    {
+      "id": "12450_2",
+      "name": "NZM - PNBE Sampark Kranti",
+      "speed": 80,
+      "route": [
+        "NZM",
+        "DEL",
+        "AGC",
+        "LKO",
+        "GKP",
+        "PNBE"
+      ],
+      "timings": [
+        "17:30",
+        "20:45",
+        "00:00",
+        "04:15",
+        "07:30",
+        "11:00"
+      ],
+      "type": "Sampark Kranti Express"
+    },
+    {
+      "id": "14012_2",
+      "name": "KGM - UMB Haryana Courier",
+      "speed": 60,
+      "route": [
+        "KGM",
+        "HRY",
+        "DEC",
+        "SRE",
+        "KKDE",
+        "UMB"
+      ],
+      "timings": [
+        "12:00",
+        "14:30",
+        "17:00",
+        "19:30",
+        "21:45",
+        "00:15"
+      ],
+      "type": "Intercity Express"
+    },
+    {
+      "id": "12068_2",
+      "name": "DEC - CDG Shivalik Express",
+      "speed": 65,
+      "route": [
+        "DEC",
+        "SRE",
+        "KKDE",
+        "UMB",
+        "JUC",
+        "LDH",
+        "PTA",
+        "CDG"
+      ],
+      "timings": [
+        "06:30",
+        "09:45",
+        "12:00",
+        "15:15",
+        "17:30",
+        "20:45",
+        "23:00",
+        "02:15"
+      ],
+      "type": "Jan Shatabdi Express"
+    },
+    {
+      "id": "11058_2",
+      "name": "JUC - LKO Kisan Express",
+      "speed": 55,
+      "route": [
+        "JUC",
+        "LDH",
+        "UMB",
+        "KKDE",
+        "RTM",
+        "DEL",
+        "LKO",
+        "GKP",
+        "PNBE",
+        "ALD",
+        "BSB",
+        "LKO"
+      ],
+      "timings": [
+        "04:00",
+        "07:15",
+        "10:30",
+        "13:45",
+        "17:00",
+        "21:15",
+        "00:30",
+        "04:45",
+        "08:00",
+        "11:15",
+        "14:30",
+        "18:00"
+      ],
+      "type": "Passenger Special"
+    }
+  ],
+  "bookings": [
+    {
+      "bookingId": "B5VE76T1E",
+      "trainId": "167_1",
+      "trainName": "DEL - LKO - New Delhi Sampark Kranti Express",
+      "from": "DEL",
+      "fromName": "New Delhi",
+      "to": "LKO",
+      "toName": "Lucknow",
+      "date": "2025-05-01",
+      "class": "sleeper",
+      "quota": "general",
+      "fare": "393.90",
+      "departureTime": "02:28",
+      "arrivalTime": "05:29",
+      "bookingTime": "2025-05-01T21:31:05.425Z",
+      "status": "confirmed",
+      "passengerCount": 1,
+      "passengerDetails": {
+        "name": "ankit",
+        "age": "22",
+        "gender": "male"
+      }
+    }
+  ],
+  "track_closures": [],
+  "station_closures": []
+}

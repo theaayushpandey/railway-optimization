@@ -1,0 +1,469 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  background: var(--light-gray);
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Header & Navigation */
+.header-links {
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Card Styles */
+.booking-card,
+.train-card {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  background: linear-gradient(to bottom, #7288af, var(--light-gray));
+}
+
+.bookings-header
+{
+  color: var(--primary-dark);
+  /* border:2px solid red */
+}
+.bookings-header > .close-btn
+{
+  border:1px solid var(--dark);
+}
+
+.booking-card:hover,
+.train-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.booking-card {
+  padding: 2rem;
+}
+
+.train-card {
+  padding: 1.1rem 1.5rem;
+}
+
+.booking-card h2,
+.modal-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-card h2 i,
+.modal-content h2 i {
+  font-size: 1.5rem;
+}
+
+.booking-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.booking-details div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.booking-details strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+
+/* Form Styles */
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.swap {
+  position: relative;
+  top: -40px;
+  left: 180px;
+  width: 35px;
+}
+
+.form-field label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-light);
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  appearance: none;
+  border: none;
+  /* border: 1px solid var(--dark-gray); */
+  background: var(--light-gray);
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  /* border-color: var(--primary-dark); */
+  box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+/* Sort Options */
+.sort-options-container {
+  margin-bottom: 1.5rem;
+}
+
+.sort-options-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.sort-options {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Results Section */
+.results {
+  margin-top: 2rem;
+}
+
+.no-trains {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Train Cards */
+.train-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.train-header h3 {
+  color: var(--primary-dark);
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.train-type {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.train-timings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.train-timings::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 27%;
+  right: 27%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-dark), var(--secondary-color));
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.timing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.timing .time {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.timing .station {
+  font-size: 0.9rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.duration {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background-color: var(--text-light);
+  color: var(--light-gray);
+  padding: 0 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.train-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+  padding: 1rem 0;
+  border-top: 1px dashed var(--dark);
+  border-bottom: 1px dashed var(--dark);
+}
+
+.train-details div {
+  text-align: center;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.train-details strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.route-details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.route-details h4 {
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+  font-size: 1rem;
+}
+
+.route-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #7288af, var(--light-gray));
+  margin: 5vh auto;
+  padding: 1.5rem 2.5rem;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: var(--shadow-md);
+  animation: slideUp 0.3s ease;
+  position: relative;
+}
+
+.train-summary {
+  /* background-color: #adbad2; */
+  margin: 1.5rem 0;
+  padding: 10px;
+  border: 1px solid var(--primary-dark);
+}
+
+.train-summary h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  gap: 0.5rem;
+}
+
+.train-summary p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--dark);
+  gap: 0.5rem;
+}
+
+.passenger-detail {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#bookingForm-modal .form-group {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#bookingForm-modal .form-group div {
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.close-btn {
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  float: right;
+}
+
+.close-btn:hover {
+  border: 0.5px solid var(--primary-dark);
+  background-color: var(--light-gray);
+  color: var(--primary-dark);
+  transform: rotate(90deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .form-group,
+  .train-details,
+  .booking-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .train-timings::before {
+    left: 20%;
+    right: 20%;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    margin: 2vh auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .booking-card,
+  .modal-content {
+    padding: 1.25rem;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .train-details,
+  .booking-details {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .train-timings {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .train-timings::before {
+    display: none;
+  }
+
+  .duration {
+    order: -1;
+  }
+}
