@@ -71,7 +71,7 @@ function swap() {
 
 // Load train data from server
 function loadTrainData() {
-    fetch('http://localhost:5000/api/data')
+    fetch(`${API_URL}/data`)
         .then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
@@ -214,7 +214,7 @@ async function handleModalSubmit(e) {
             }
         };
 
-        const response = await fetch('http://localhost:5000/api/bookings', {
+        const response = await fetch(`${API_URL}/bookings`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -297,7 +297,7 @@ window.bookTicket = function (trainId, date, classType, quota) {
 async function downloadTicket(bookingId) {
     try {
         // Fetch booking data from backend using the specific booking ID
-        const response = await fetch(`http://localhost:5000/api/get_booking/${bookingId}`);
+        const response = await fetch(`${API_URL}/get_booking/${bookingId}`);
         if (!response.ok) {
             showCaptureModal("Failed to fetch booking data", "error");
             throw new Error('Failed to fetch booking data');
@@ -388,7 +388,7 @@ window.cancelBooking = async function (bookingId) {
             }
         }
 
-        const response = await fetch(`http://localhost:5000/api/bookings/${bookingId}`, {
+        const response = await fetch(`${API_URL}/bookings/${bookingId}`, {
             method: 'DELETE'
         });
 
@@ -624,7 +624,7 @@ function displayResults(trains, date, classType, quota) {
 
 async function viewBookedTickets() {
     try {
-        const response = await fetch('http://localhost:5000/api/bookings');
+        const response = await fetch(`${API_URL}/bookings`);
         if (!response.ok) throw new Error('Failed to fetch bookings');
         const bookings = await response.json();
         displayBookings(bookings);
