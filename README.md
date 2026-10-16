@@ -1,50 +1,46 @@
-#Railway Optimization
-🚆 Railway Optimization System
-A web-based system designed to simulate and manage train bookings efficiently using optimized data handling and modular JavaScript. Built with HTML, CSS, and JavaScript, this project helps visualize how railway systems manage ticket reservations and train data in real-time.
+# Railway Optimization
 
-🌐 Live Demo
-➡️ Click here to view (Enable GitHub Pages first)
+A railway network simulator. Stations and tracks form a weighted graph drawn on a map, and the app runs graph algorithms on it: shortest routes, a minimum spanning tree, and the maximum traffic the tracks can carry between two stations. A second page lets you search trains and book tickets.
 
-📂 Folder Structure
-railway-optimization/ ├── css/ # Stylesheets (booking.css, style.css, utility.css) ├── data/ # JSON files for train & temporary data ├── script/ # JS logic (booking.js, script.js) ├── booking.html # Booking page UI ├── index.html # Main entry page ├── swap.svg # UI SVG graphic ├── x.py # (Optional) Data pre-processing logic in Python ├── README.md # Project description and info
+## What it does
 
-yaml Copy Edit
+| Feature | Algorithm | Where |
+| --- | --- | --- |
+| Shortest route between two stations | Dijkstra with a binary min-heap, O((V + E) log V) | `findShortestPath` in `script/script.js` |
+| Shortest route, second method | Bellman-Ford, O(V * E) | `findPathsWithBellmanFord` |
+| K shortest routes | Best-first search over partial paths with a straight-line (haversine) heuristic | `findAllPaths` |
+| Cheapest set of tracks that connects every station | Prim's minimum spanning tree | `calculateMST` |
+| Maximum traffic the tracks can carry between two stations, from each track's capacity | Edmonds-Karp max flow (Ford-Fulkerson with BFS), O(V * E^2) | `calculateMaxFlow` |
+| Station and track closures with a timer | Closed tracks are left out of the graph | `buildGraph`, `x.py` |
+| Train search, fares and ticket booking | Route lookup over each train's station list | `script/booking.js` |
 
-🧠 Features
-🚉 Search and book train tickets via booking.html
-📊 Real-time simulation of train data from data/railways.json
-🧾 Dynamic UI interaction with script.js and booking.js
-💡 Modular CSS for maintainable styles
-🔁 Train swap feature using interactive SVG
-🧰 Tech Stack
-Frontend	Data	Scripting
-HTML5	JSON	JavaScript (ES6)
-CSS3	—	Python (optional: x.py)
-🛠️ How to Run Locally
-Clone the repository
+The sample network in `data/railways.json` has 71 stations, 204 tracks and 24 trains.
+
+## Tech stack
+
+- Frontend: HTML, CSS, JavaScript. All graph algorithms run in the browser.
+- Backend: Python, Flask REST API (`x.py`).
+- Storage: one JSON file, `data/railways.json`. There is no database.
+
+## Run it locally
+
+```bash
 git clone https://github.com/theaayushpandey/railway-optimization.git
 cd railway-optimization
-Open the project in your browser:
+pip install flask flask-cors
+python x.py
+```
 
-For main page: index.html
+Then open `index.html` (network and algorithms) or `booking.html` (search and booking) in a browser. The pages call the API at `http://localhost:5000`.
 
-For booking system: booking.html
+## Known limitations
 
-✅ Next Steps 📸 Add screenshots or GIFs of your UI to show booking in action
+- Storage is a single JSON file that is rewritten on every change. A lock makes requests take turns, which is safe but means only one request is handled at a time. A real system would use a database with transactions.
+- There is no login. `/api/check_login` always answers true.
+- A new booking for the same train and date is merged into the existing booking instead of being stored as a separate ticket.
+- Fares are stored as strings and calculated in the browser, so the server trusts whatever fare the page sends.
+- The API address is hard-coded to `localhost:5000`.
 
-🌐 Enable GitHub Pages for a live hosted demo
+## Author
 
-📝 Expand this README with a section for "Project Goals" or "Future Work"
-
-👨‍💻 Author Aayush Pandey 🔗 GitHub ✉️ theaayushpandey@gmail.com
-
-📃 License This project is open source under the MIT License.
-
-yaml Copy Edit
-
-✅ Just paste that into your README.md, save, and push it:
-
-git add README.md
-git commit -m "Added professional README"
-git push
-
+Aayush Pandey, [github.com/theaayushpandey](https://github.com/theaayushpandey)
