@@ -748,6 +748,61 @@ function isTrackClosed(source, destination) {
     );
 }
 
+// Binary min-heap shared by Dijkstra and the K-shortest-paths search
+class PriorityQueue {
+    constructor(comparator) {
+        this.heap = [];
+        this.comparator = comparator;
+    }
+
+    enqueue(item) {
+        this.heap.push(item);
+        this.bubbleUp(this.heap.length - 1);
+    }
+
+    dequeue() {
+        const top = this.heap[0];
+        const bottom = this.heap.pop();
+        if (this.heap.length > 0) {
+            this.heap[0] = bottom;
+            this.sinkDown(0);
+        }
+        return top;
+    }
+
+    isEmpty() {
+        return this.heap.length === 0;
+    }
+
+    bubbleUp(index) {
+        while (index > 0) {
+            const parent = (index - 1) >> 1;
+            if (this.comparator(this.heap[index], this.heap[parent]) >= 0) break;
+            [this.heap[parent], this.heap[index]] = [this.heap[index], this.heap[parent]];
+            index = parent;
+        }
+    }
+
+    sinkDown(index) {
+        const left = (index << 1) + 1;
+        const right = (index << 1) + 2;
+        let min = index;
+
+        if (left < this.heap.length && this.comparator(this.heap[left], this.heap[min]) < 0) {
+            min = left;
+        }
+
+        if (right < this.heap.length && this.comparator(this.heap[right], this.heap[min]) < 0) {
+            min = right;
+        }
+
+        if (min !== index) {
+            [this.heap[index], this.heap[min]] = [this.heap[min], this.heap[index]];
+            this.sinkDown(min);
+        }
+    }
+}
+
 // Path finding algorithms (updated to consider closures)
 function findShortestPath(startId, endId) {
     // First check if start or end stations are closed
@@ -763,24 +818,27 @@ function findShortestPath(startId, endId) {
 
     const distances = {};
     const previous = {};
-    const nodes = new Set();
+    const settled = new Set();
     const path = [];
-    let smallest;
 
     data.stations.forEach(station => {
         distances[station.id] = station.id === startId ? 0 : Infinity;
-        nodes.add(station.id);
     });
 
-    while (nodes.size) {
-        smallest = null;
-        nodes.forEach(node => {
-            if (smallest === null || distances[node] < distances[smallest]) {
-                smallest = node;
-            }
-        });
+    // Min-heap keyed on distance: O((V + E) log V) instead of scanning every station each round
+    const queue = new PriorityQueue((a, b) => a.distance - b.distance);
+    queue.enqueue({ id: startId, distance: 0 });
 
-        if (smallest === endId || distances[smallest] === Infinity) {
+    while (!queue.isEmpty()) {
+        const { id: smallest, distance } = queue.dequeue();
+
+        // Stale entry: this station was already settled with a shorter distance
+        if (settled.has(smallest) || distance > distances[smallest]) {
+            continue;
+        }
+        settled.add(smallest);
+
+        if (smallest === endId) {
             break;
         }
 
@@ -794,10 +852,9 @@ function findShortestPath(startId, endId) {
             if (alt < distances[neighbor.destination]) {
                 distances[neighbor.destination] = alt;
                 previous[neighbor.destination] = smallest;
+                queue.enqueue({ id: neighbor.destination, distance: alt });
             }
         });
-
-        nodes.delete(smallest);
     }
 
     const resultContainer = document.getElementById('path-results');
@@ -817,7 +874,7 @@ function findShortestPath(startId, endId) {
         total_path.querySelector('#total-path').textContent = 'Shortest Path is : ';
         resultContainer.appendChild(total_path);
 
-        resultElement.querySelector('#path-distance').textContent = distances[endId] + ' km';
+        resultElement.querySelector('#path-distance').textContent = distances[endId].toFixed(1) + ' km';
 
         const pathStationsElement = resultElement.querySelector('#path-stations');
         const pathDiv = document.createElement('div');
@@ -871,7 +928,8 @@ function findPathsWithBellmanFord(startId, endId) {
 
             const u = track.source;
             const v = track.destination;
-            const weight = track.weight;
+            // Same edge cost as Dijkstra (km), so both algorithms agree and the "km" label is true
+            const weight = track.distance;
 
             // Forward direction
             if (distances[u] !== Number.MAX_SAFE_INTEGER && 
@@ -935,7 +993,7 @@ function findPathsWithBellmanFord(startId, endId) {
         showAlert(resultContainer, "Path contains a cycle - check for negative weights");
     } else {
         const template = document.getElementById('shortest-path-result-template').content.cloneNode(true);
-        template.querySelector('#path-distance').textContent = `${distances[endId]} km`;
+        template.querySelector('#path-distance').textContent = `${distances[endId].toFixed(1)} km`;
         
         const pathText = path.map(id => {
             const station = data.stations.find(s => s.id === id);
@@ -1015,61 +1073,6 @@ function findAllPaths(startId, endId) {
             Math.sin(dLon / 2) * Math.sin(dLon / 2);
         const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         return R * c;
-    }
-
-    // Priority Queue (optimized for A*)
-    class PriorityQueue {
-        constructor(comparator) {
-            this.heap = [];
-            this.comparator = comparator;
-        }
-
-        enqueue(item) {
-            this.heap.push(item);
-            this.bubbleUp(this.heap.length - 1);
-        }
-
-        dequeue() {
-            const top = this.heap[0];
-            const bottom = this.heap.pop();
-            if (this.heap.length > 0) {
-                this.heap[0] = bottom;
-                this.sinkDown(0);
-            }
-            return top;
-        }
-
-        isEmpty() {
-            return this.heap.length === 0;
-        }
-
-        bubbleUp(index) {
-            while (index > 0) {
-                const parent = (index - 1) >> 1;
-                if (this.comparator(this.heap[index], this.heap[parent]) >= 0) break;
-                [this.heap[parent], this.heap[index]] = [this.heap[index], this.heap[parent]];
-                index = parent;
-            }
-        }
-
-        sinkDown(index) {
-            const left = (index << 1) + 1;
-            const right = (index << 1) + 2;
-            let min = index;
-
-            if (left < this.heap.length && this.comparator(this.heap[left], this.heap[min]) < 0) {
-                min = left;
-            }
-
-            if (right < this.heap.length && this.comparator(this.heap[right], this.heap[min]) < 0) {
-                min = right;
-            }
-
-            if (min !== index) {
-                [this.heap[index], this.heap[min]] = [this.heap[min], this.heap[index]];
-                this.sinkDown(min);
-            }
-        }
     }
 
     // Run A* search
@@ -1349,7 +1352,12 @@ function calculateMaxFlow() {
         return;
     }
 
-    // Ford-Fulkerson implementation
+    if (source === sink) {
+        alert("Source and sink must be different stations.");
+        return;
+    }
+
+    // Edmonds-Karp: Ford-Fulkerson with BFS (shortest augmenting path), O(V * E^2)
     let maxFlow = 0;
     const residualGraph = JSON.parse(JSON.stringify(graph.capacities));
     const parent = {};
@@ -1392,6 +1400,8 @@ function calculateMaxFlow() {
         while (v !== source) {
             const u = parent[v];
             residualGraph[u][v] -= pathFlow;
+            // A station with no outgoing track has no entry yet, so create one before adding the reverse edge
+            if (!residualGraph[v]) residualGraph[v] = {};
             residualGraph[v][u] = (residualGraph[v][u] || 0) + pathFlow;
             v = u;
         }

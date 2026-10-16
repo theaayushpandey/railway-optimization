@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import json
 import os
+import threading
+import uuid
 from datetime import datetime, timedelta
 
 app = Flask(__name__, static_folder='static')
@@ -22,6 +24,19 @@ metrics_cache = {
 
 # Ensure data directory exists
 os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+
+# Every endpoint reads the whole file, changes it and writes it back. Without a lock,
+# two requests at the same moment can both read the old file and one write is lost.
+data_lock = threading.Lock()
+
+@app.before_request
+def acquire_data_lock():
+    data_lock.acquire()
+
+@app.teardown_request
+def release_data_lock(exc):
+    if data_lock.locked():
+        data_lock.release()
 
 def load_data():
     """Load railway data from JSON file and clean up expired closures"""
@@ -66,8 +81,11 @@ def load_data():
 
 def save_data(data):
     """Save railway data to JSON file"""
-    with open(DATA_FILE, 'w') as f:
+    # Write to a temp file and swap it in, so a crash mid-write cannot leave a half-written JSON file
+    tmp_file = DATA_FILE + '.tmp'
+    with open(tmp_file, 'w') as f:
         json.dump(data, f, indent=2)
+    os.replace(tmp_file, DATA_FILE)
 
 def update_metrics_cache():
     """Update the cached metrics"""
@@ -114,7 +132,7 @@ def add_station_closure():
     
     # Add timestamp and ID
     closure_data['startTime'] = datetime.now().isoformat()
-    closure_data['id'] = f"stclos_{datetime.now().strftime('%Y%m%d%H%M%S')}"
+    closure_data['id'] = f"stclos_{uuid.uuid4().hex[:12]}"
     closure_data['type'] = 'station'
     
     # Initialize closures list if it doesn't exist
@@ -185,7 +203,7 @@ def add_track_closure():
     
     # Add timestamp and ID
     closure_data['startTime'] = datetime.now().isoformat()
-    closure_data['id'] = f"trclos_{datetime.now().strftime('%Y%m%d%H%M%S')}"
+    closure_data['id'] = f"trclos_{uuid.uuid4().hex[:12]}"
     closure_data['type'] = 'track'
     
     # Initialize closures list if it doesn't exist
@@ -237,7 +255,6 @@ def get_all_data():
         if 'startTime' in c and 
         current_time - datetime.fromisoformat(c['startTime']) < timedelta(hours=c.get('duration', 0))
     ]
-    print(data['station_closures'])
     
     response_data = {
         'stations': data['stations'],
@@ -358,7 +375,6 @@ def add_train():
 @app.route('/api/get_count', methods=['GET'])
 def get_count():
     update_metrics_cache()
-    print(metrics_cache)
     return jsonify(metrics_cache)
 
 # --------------------------
@@ -594,4 +610,5 @@ def check_login():
     return jsonify({'logged_in': True})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Debug mode exposes an interactive debugger, so it is opt-in: set FLASK_DEBUG=1 locally
+    app.run(debug=os.environ.get('FLASK_DEBUG') == '1', port=5000)
