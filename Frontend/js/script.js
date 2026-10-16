@@ -176,7 +176,7 @@ function setupTabSwitching() {
 }
 
 function loadData() {
-    return fetch('http://localhost:5000/api/data')
+    return fetch(`${API_URL}/data`)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
@@ -445,7 +445,7 @@ function addStation() {
 
     const station = { id, name, latitude: lat, longitude: lng };
 
-    fetch('http://localhost:5000/api/add-station', {
+    fetch(`${API_URL}/add-station`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -488,7 +488,7 @@ function addTrack() {
         weight: weight ? parseFloat(weight) : distance // Fallback to distance 
     };
 
-    fetch('http://localhost:5000/api/add-track', {
+    fetch(`${API_URL}/add-track`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -514,7 +514,7 @@ function addTrack() {
 
 
 function loadStationClosures() {
-    fetch('http://localhost:5000/api/station-closures')
+    fetch(`${API_URL}/station-closures`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -531,7 +531,7 @@ function loadStationClosures() {
 }
 
 function loadTrackClosures() {
-    fetch('http://localhost:5000/api/track-closures')
+    fetch(`${API_URL}/track-closures`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -623,7 +623,7 @@ function startCountdown(timeElement, endTime) {
 }
 
 function removeClosure(closureId, type) {
-    fetch(`http://localhost:5000/api/${type}-closures/${closureId}`, {
+    fetch(`${API_URL}/${type}-closures/${closureId}`, {
         method: 'DELETE'
     })
         .then(response => {
@@ -672,7 +672,7 @@ function addStationClosure() {
         reason: document.getElementById('closure-reason').value,
         duration: totalDuration
     };
-    fetch('http://localhost:5000/api/add-station-closure', {
+    fetch(`${API_URL}/add-station-closure`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -708,7 +708,7 @@ function addTrackClosure() {
         duration: totalDuration,
         bidirectional: document.getElementById('track-bidirectional').checked
     };
-    fetch('http://localhost:5000/api/add-track-closure', {
+    fetch(`${API_URL}/add-track-closure`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -1494,7 +1494,7 @@ function handleAddTrain(e) {
         showCaptureModal(`"Submitting train:", ${trainId}`, "success");
 
 
-        return fetch('http://localhost:5000/api/trains-add', {
+        return fetch(`${API_URL}/trains-add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1717,7 +1717,7 @@ function setupTrainManagement() {
             submitBtn.textContent = 'Saving...';
 
             // Send to server
-            const response = await fetch(`http://localhost:5000/api/trains/${currentEditingTrainId}`, {
+            const response = await fetch(`${API_URL}/trains/${currentEditingTrainId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -1895,7 +1895,7 @@ function animateCount(elementId, targetNumber, duration = 1000) {
 }
 
 function updateMetrics() {
-    fetch('http://localhost:5000/api/get_count')
+    fetch(`${API_URL}/get_count`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
