@@ -1250,12 +1250,10 @@ function showMSTResult(mst, totalWeight) {
 
 function highlightMST() {
     if (currentMST.length > 0) {
-        const allNodes = new Set();
-        currentMST.forEach(edge => {
-            allNodes.add(edge.u);
-            allNodes.add(edge.v);
-        });
-        highlightPath(Array.from(allNodes), 'orange');
+        // Draw each tree edge (u-v) on its own. Chaining all tree stations into one path
+        // would also draw lines between stations that the tree does not connect.
+        clearPathHighlights();
+        currentMST.forEach(edge => drawPath([edge.u, edge.v], 'orange'));
     }
 }
 
@@ -1298,16 +1296,23 @@ function clearHighlights() {
 
 
 
-// Highlight a path on the map
-function highlightPath(stationIds, color) {
-    // First clear existing highlights
+// Remove every highlight drawn by drawPath
+function clearPathHighlights() {
     map.eachLayer(layer => {
         if (layer.options && layer.options.highlight) {
             map.removeLayer(layer);
         }
     });
+}
 
-    // Draw new highlights
+// Highlight a path on the map, replacing any earlier highlight
+function highlightPath(stationIds, color) {
+    clearPathHighlights();
+    drawPath(stationIds, color);
+}
+
+// Draw stations and a line between each consecutive pair, on top of existing highlights
+function drawPath(stationIds, color) {
     stationIds.forEach((id, index) => {
         const station = data.stations.find(s => s.id === id);
         if (!station) return;
