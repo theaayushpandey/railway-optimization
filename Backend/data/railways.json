@@ -1999,10 +1999,10 @@
     {
       "source": "LKO",
       "destination": "DEL",
-      "distance": 380.1,
+      "distance": 417.0,
       "bidirectional": true,
       "capacity": 15,
-      "weight": 290
+      "weight": 315
     },
     {
       "source": "AGC",
