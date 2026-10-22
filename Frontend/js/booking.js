@@ -191,7 +191,6 @@ async function handleModalSubmit(e) {
         const totalFare = farePerPerson * passengerCount;
 
         const bookingData = {
-            bookingId: generateBookingId(),
             trainId,
             trainName: train.name,
             from: fromStation.id,
@@ -216,9 +215,9 @@ async function handleModalSubmit(e) {
 
         const response = await fetch(`${API_URL}/bookings`, {
             method: 'POST',
-            headers: {
+            headers: await ownerHeaders({
                 'Content-Type': 'application/json',
-            },
+            }),
             body: JSON.stringify(bookingData)
         });
 
@@ -297,7 +296,9 @@ window.bookTicket = function (trainId, date, classType, quota) {
 async function downloadTicket(bookingId) {
     try {
         // Fetch booking data from backend using the specific booking ID
-        const response = await fetch(`${API_URL}/get_booking/${bookingId}`);
+        const response = await fetch(`${API_URL}/get_booking/${bookingId}`, {
+            headers: await ownerHeaders()
+        });
         if (!response.ok) {
             showCaptureModal("Failed to fetch booking data", "error");
             throw new Error('Failed to fetch booking data');
@@ -389,7 +390,8 @@ window.cancelBooking = async function (bookingId) {
         }
 
         const response = await fetch(`${API_URL}/bookings/${bookingId}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: await ownerHeaders()
         });
 
         if (!response.ok)
@@ -624,7 +626,7 @@ function displayResults(trains, date, classType, quota) {
 
 async function viewBookedTickets() {
     try {
-        const response = await fetch(`${API_URL}/bookings`);
+        const response = await fetch(`${API_URL}/bookings`, { headers: await ownerHeaders() });
         if (!response.ok) throw new Error('Failed to fetch bookings');
         const bookings = await response.json();
         displayBookings(bookings);
@@ -728,8 +730,18 @@ function calculateDistance(route, from, to) {
     return distance;
 }
 
-function generateBookingId() {
-    return 'B' + Math.random().toString(36).substr(2, 8).toUpperCase();
+// The server gives this browser a secret owner token. Every booking request sends it,
+// and the server only shows or cancels bookings made with the same token.
+async function ownerHeaders(extra = {}) {
+    let token = null;
+    try { token = localStorage.getItem('ownerToken'); } catch (e) { /* storage blocked */ }
+    if (!token) {
+        const response = await fetch(`${API_URL}/owner-token`, { method: 'POST' });
+        if (!response.ok) throw new Error('Could not get an owner token');
+        token = (await response.json()).ownerToken;
+        try { localStorage.setItem('ownerToken', token); } catch (e) { /* kept for this page only */ }
+    }
+    return { ...extra, 'X-Owner-Token': token };
 }
 
 function calculateDuration(departureTime, arrivalTime) {

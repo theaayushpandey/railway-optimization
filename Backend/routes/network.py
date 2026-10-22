@@ -10,14 +10,14 @@ network_bp = Blueprint('network', __name__, url_prefix='/api')
 
 @network_bp.route('/data', methods=['GET'])
 def get_all_data():
-    """Endpoint to get all railway data with active closures"""
+    """Endpoint to get all railway data with active closures.
+    Bookings are left out: each person reads only their own through /api/bookings."""
     data = load_data()  # load_data has already removed expired closures
 
     response_data = {
         'stations': data['stations'],
         'tracks': data['tracks'],
         'trains': data['trains'],
-        'bookings': data.get('bookings', []),
         'station_closures': data['station_closures'],
         'track_closures': data['track_closures']
     }
